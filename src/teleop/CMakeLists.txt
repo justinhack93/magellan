@@ -6,6 +6,7 @@ project(teleop)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
   geometry_msgs
+  joy
   roscpp
   rospy
 )
@@ -102,7 +103,7 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES teleop
-#  CATKIN_DEPENDS geometry_msgs roscpp rospy
+  CATKIN_DEPENDS geometry_msgs joy roscpp rospy
 #  DEPENDS system_lib
 )
 
@@ -186,3 +187,6 @@ include_directories(
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+
+add_executable(teleop_joy src/teleop_joy.cpp)
+target_link_libraries(teleop_joy ${catkin_LIBRARIES})
