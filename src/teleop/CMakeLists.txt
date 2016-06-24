@@ -190,3 +190,6 @@ include_directories(
 
 add_executable(teleop_joy src/teleop_joy.cpp)
 target_link_libraries(teleop_joy ${catkin_LIBRARIES})
+
+add_executable(teleop_key src/teleop_key.cpp)
+target_link_libraries(teleop_key ${catkin_LIBRARIES})
